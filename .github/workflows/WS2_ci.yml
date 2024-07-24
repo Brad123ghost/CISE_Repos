@@ -1,0 +1,40 @@
+name: Worksheet2_CI_ACTION
+
+on:
+  push:
+    branches:
+      - master
+      - Development
+  pull_request:
+    branches:
+      - master
+      - Development
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: Worksheet 2/cise_ass1a_worksheet2-frontend
+
+      - name: Run the test
+        run: npm test
+        working-directory: Worksheet 2/cise_ass1a_worksheet2-frontend
+
+      - name: Build
+        run: npm run build
+        working-directory: Worksheet 2/cise_ass1a_worksheet2-frontend
