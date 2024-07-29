@@ -6,14 +6,14 @@ on:
       - master
       - Development
     paths:
-      - "./Worksheet 2/*"
+      - "./Worksheet 2/**"
       
   pull_request:
     branches:
       - master
       - Development
     paths:
-      - "./Worksheet 2/*"
+      - "./Worksheet 2/**"
 
 jobs:
   build:
