@@ -3,7 +3,6 @@ name: Worksheet2_CI_ACTION
 on:
   push:
     branches:
-      - master
       - Development
     paths:
       - "Worksheet 2/**"
@@ -11,7 +10,6 @@ on:
   pull_request:
     branches:
       - master
-      - Development
     paths:
       - "Worksheet 2/**"
 
