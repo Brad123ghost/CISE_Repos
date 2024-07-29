@@ -3,7 +3,7 @@ name: Worksheet2_CI_ACTION
 on:
   push:
     branches:
-      - Development
+      - master
     paths:
       - "Worksheet 2/**"
       
