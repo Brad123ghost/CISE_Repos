@@ -1,0 +1,25 @@
+name: Github Actions Test
+
+on:
+  push:
+    branches: ["master", "Development"]
+  pull_request:
+    branches: ["master", "Development"]
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./Worksheet 4/frontend
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install
+
+      # - name: Run test
+      #   run: npm run test:ci
+        
