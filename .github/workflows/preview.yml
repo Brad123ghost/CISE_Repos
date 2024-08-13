@@ -11,6 +11,9 @@ jobs:
 
   Deploy-Preview:
     runs-on: ubuntu-lateset
+    defaults:
+      run:
+        working-directory: ./Worksheet 4/frontend
     needs: [test]
     steps:
       - uses: actions/checkout@v3

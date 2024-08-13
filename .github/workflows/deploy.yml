@@ -6,6 +6,8 @@ env:
 on:
   pull_request:
     branches: ["master"]
+    paths:
+      - "Worksheet 4/**"
     types:
       - closed
 jobs:
@@ -15,6 +17,9 @@ jobs:
 
   Deploy-Production:
     if: github.event.pull_request.merged == true
+    defaults:
+      run:
+        working-directory: ./Worksheet 4/frontend
     runs-on: ubuntu-latest
     needs: [Test]
     steps:

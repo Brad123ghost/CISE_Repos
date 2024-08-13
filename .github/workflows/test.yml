@@ -3,14 +3,21 @@ name: Github Actions Test
 on:
   push:
     branches: ["master", "Development"]
+    paths:
+      - "Worksheet 4/**"
   pull_request:
     branches: ["master", "Development"]
+    paths:
+      - "Worksheet 4/**"
   workflow_call:
   workflow_dispatch:
 
 jobs:
   test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./Worksheet 4/frontend
     steps:
       - uses: actions/checkout@v4
 
