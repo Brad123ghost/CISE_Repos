@@ -6,8 +6,6 @@ env:
 on:
   pull_request:
     branches: ["master"]
-    paths:
-      - "Worksheet 4/**"
     types:
       - closed
 jobs:
